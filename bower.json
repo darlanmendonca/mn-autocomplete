@@ -1,0 +1,22 @@
+{
+  "name": "mn-autocomplete",
+  "version": "0.0.1",
+  "description": "A input component with autocomplete",
+  "main": [
+    "dist/mn-autocomplete.css",
+    "dist/mn-autocomplete.js"
+  ],
+  "authors": [
+    "Darlan Mendonça <darlanmendonca@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "document-register-element": "^1.3.0",
+    "open-color": "^1.4.1",
+    "mn-input": "^0.0.26"
+  },
+  "devDependencies": {
+    "mn-gh-page": "0.0.10"
+  }
+}
