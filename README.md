@@ -17,7 +17,7 @@ Or just download the main files, located in [dist/](https://github.com/minimalis
 
 ### Usage
 
-And then, in your html, you can use the tag ```mn-input``` i.e.
+And then, in your html, you can use the tag `mn-autocomplete` i.e.
 
 ```html
 <mn-autocomplete placeholder="Username"></mn-autocomplete>
