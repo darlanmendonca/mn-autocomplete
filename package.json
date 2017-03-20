@@ -6,6 +6,8 @@
   "scripts": {
     "start": "scripts/start.sh",
     "bundle": "scripts/bundle.sh",
+    "lint": "scripts/lint.sh",
+    "pretest": "npm run bundle && npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -21,6 +23,7 @@
     "browser-sync": "^2.14.0",
     "compression": "^1.6.2",
     "connect-history-api-fallback": "^1.3.0",
+    "eslint": "^3.18.0",
     "eslint-config-mn-component": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
