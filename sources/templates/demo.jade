@@ -1,6 +1,6 @@
 html
   meta(name='viewport' content='width=device-width, user-scalable=no')
-  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+  //- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
 
 
   block styles
@@ -24,9 +24,9 @@ body
   h2 mn-autocomplete
   include github-corner
 
-  .layout-fullscreen.layout-centered
-    .layout-container
-      form.layout-column.layout-sm-row
+  .mn-layout-fullscreen.mn-layout-centered
+    .mn-layout-container
+      form.mn-layout-column.mn-layout-sm-row
         mn-autocomplete.flex(placeholder='Houses')
           menu.mn-card
             .mn-option Stark
@@ -40,7 +40,7 @@ body
             .mn-option Targaryen
             .mn-option Snow
   
-  .docs.layout-container
+  .docs.mn-layout-container
     mn-code.sh.
       # not available ye, working in progress
       bower install --save mn-autocomplete
@@ -55,14 +55,4 @@ body
   block scripts
     script(src='docs/vendor.js')
     script(src='dist/mn-autocomplete.js')
-  //- script.
-    var form = document.querySelector('form')
-    form.setAttribute('novalidate', 'novalidate')
-    form.addEventListener('submit', submit)
-
-    function submit(event) {
-      form.classList.add('submitted')
-      event.preventDefault()
-      console.log('valid', form.checkValidity())
-    }
 
