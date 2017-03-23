@@ -9,6 +9,7 @@ mn-autocomplete menu {
   top: calc(100% + 2px); left: 0;
   transition: opacity .2s ease;
   opacity: 0;
+  pointer-events: none;
 
 
   .mn-option {
@@ -30,4 +31,5 @@ mn-autocomplete menu {
 
 mn-autocomplete.focused menu {
   opacity: 1;
+  pointer-events: all;
 }

@@ -1,7 +1,5 @@
 html
   meta(name='viewport' content='width=device-width, user-scalable=no')
-  //- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
-
 
   block styles
     link(rel='stylesheet' href='docs/vendor.css')
@@ -52,6 +50,10 @@ body
     mn-code.html.
       <mn-autocomplete placeholder='Type a value'>
   
+  //- mn-dialog(id='houses-autocomplete')
+    .mn-layout-row
+      mn-input.flex(placeholder='test' name='test' autofocus)
+
   block scripts
     script(src='docs/vendor.js')
     script(src='dist/mn-autocomplete.js')
