@@ -58,7 +58,7 @@
   "dependencies": {
     "document-register-element": "^1.4.1",
     "mn-card": "~0.0.3",
-    "mn-chips": "~0.0.5",
+    "mn-chips": "~0.0.6",
     "open-color": "^1.5.1"
   }
 }

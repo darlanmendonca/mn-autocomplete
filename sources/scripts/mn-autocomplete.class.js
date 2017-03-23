@@ -3,10 +3,23 @@ class MnAutocomplete extends window.MnChips {
     self = super(self)
 
     this.input = this.querySelector('input')
+    this.menu = this.querySelector('menu')
 
     this.setOnFocus()
+    this.setValidate()
 
     return self
+  }
+
+  setValidate() {
+    this.validateChip = validateChip
+    const menu = this.menu
+
+    function validateChip(value) {
+      console.log(value)
+      console.log(menu)
+      return true
+    }
   }
 
   setOnFocus() {
