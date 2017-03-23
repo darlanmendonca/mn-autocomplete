@@ -57,9 +57,8 @@
   },
   "dependencies": {
     "document-register-element": "^1.4.1",
-    "mn-input": "0.0.7",
-    "open-color": "^1.5.1",
-    "mn-card": "0.0.3",
-    "mn-dialog": "0.0.5"
+    "mn-card": "~0.0.3",
+    "mn-chips": "~0.0.5",
+    "open-color": "^1.5.1"
   }
 }

@@ -17,7 +17,6 @@ function vendorJSTask() {
         ? item.replace('.node.js', '.js')
         : item
     )
-
   return gulp
     .src(dependencies)
     .pipe(concat('vendor.js'))

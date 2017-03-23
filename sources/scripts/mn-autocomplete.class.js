@@ -1,4 +1,4 @@
-class MnAutocomplete extends window.MnInput {
+class MnAutocomplete extends window.MnChips {
   constructor(self) {
     self = super(self)
 
