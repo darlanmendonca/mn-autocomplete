@@ -12,6 +12,10 @@ mn-autocomplete menu {
   opacity: 0;
   pointer-events: none;
 
+  @media (max-width: 767px) {
+    max-height: 40vh;
+  }
+
 
   .mn-option {
     padding: 0 1em;
