@@ -36,10 +36,14 @@ mn-autocomplete menu {
     &:hover:not(.keydown), &:focus {
       background-color: $oc-gray-4 !important;
     }
+
+    &.hidden {
+      display: none;
+    }
   }
 }
 
-mn-autocomplete.show-menu menu {
+mn-autocomplete.focused menu {
   opacity: 1;
   pointer-events: all;
 }
