@@ -12,10 +12,10 @@ mn-autocomplete menu {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   top: calc(2em + 1px); left: 0;
-  transition: opacity .2s ease;
-  opacity: 0;
-  pointer-events: none;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .21s;
 
   @media (max-width: 767px) {
     max-height: 40vh;
@@ -45,5 +45,5 @@ mn-autocomplete menu {
 
 mn-autocomplete.focused menu {
   opacity: 1;
-  pointer-events: all;
+  visibility: visible;
 }

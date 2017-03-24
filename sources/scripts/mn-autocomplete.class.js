@@ -6,10 +6,21 @@ class MnAutocomplete extends window.MnChips {
     this.menu = this.querySelector('menu')
 
     this.setFilter()
+    this.setMenu()
     this.setOnFocus()
-    this.setValidate()
 
     return self
+  }
+
+  setMenu() {
+    document.addEventListener('mousedown', event => {
+      const isOption = event.target.classList.contains('mn-option')
+        && event.target.closest('mn-autocomplete')
+
+      if (isOption) {
+        this.addChip(event.target.textContent)
+      }
+    })
   }
 
   setFilter() {
@@ -39,14 +50,6 @@ class MnAutocomplete extends window.MnChips {
     function testRegex(search, value) {
       const reg = new RegExp(search.split('').join('.*'), 'i')
       return reg.test(value)
-    }
-  }
-
-  setValidate() {
-    this.validateChip = validateChip
-
-    function validateChip() {
-      return false
     }
   }
 
