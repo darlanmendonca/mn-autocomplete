@@ -18,9 +18,17 @@ class MnAutocomplete extends window.MnChips {
         && event.target.closest('mn-autocomplete')
 
       if (isOption) {
-        this.addChip(event.target.textContent)
+        addChip(event.target)
       }
     })
+
+    const element = this
+
+    function addChip() {
+      event.target.hasAttribute('value')
+        ? element.addChip(event.target.getAttribute('value'), event.target.textContent)
+        : element.addChip(event.target.textContent)
+    }
   }
 
   setFilter() {
