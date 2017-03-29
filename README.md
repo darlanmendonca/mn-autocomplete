@@ -10,7 +10,7 @@ Minimalist input component with autocomplete
 
 ```sh
 # not available ye, working in progress
-bower install --save mn-autocomplete
+npm install --save mn-autocomplete
 ```
 
 Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-autocomplete/tree/master/dist)

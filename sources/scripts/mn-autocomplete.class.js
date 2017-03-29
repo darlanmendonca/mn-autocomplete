@@ -3,6 +3,7 @@ class MnAutocomplete extends window.MnChips {
     self = super(self)
 
     this.input = this.querySelector('input')
+    this.select = undefined
     this.menu = this.querySelector('menu')
 
     this.setMenu()
@@ -17,6 +18,7 @@ class MnAutocomplete extends window.MnChips {
       .querySelector('.values')
       .cloneNode(true)
       .querySelectorAll('mn-option')
+
     options = Array
       .from(options)
       .map(option => `<option value="${option.getAttribute('value')}">${option.getAttribute('placeholder')}</option>`)
@@ -25,20 +27,28 @@ class MnAutocomplete extends window.MnChips {
 
     const select = `<mn-select placeholder="test">${options.join('')}</mn-select>`
     this.insertAdjacentHTML('beforeend', select)
+
+    this.select = this.querySelector('mn-select')
   }
 
   setOnFocus() {
     const mobileDevice = screen.width < 768
-    if (mobileDevice) {
-      this.input.addEventListener('focus', () => {
+
+    this.input.addEventListener('focus', () => {
+      if (mobileDevice) {
         const offsetTop = this.input.getBoundingClientRect().top - 20
           + window.pageYOffset
           - document.documentElement.clientTop
 
         window.scrollTo(0, offsetTop)
         document.body.scrollTop = offsetTop
-      })
-    }
+      }
+      this.select.open()
+    })
+
+    this.input.addEventListener('mouseup', () => {
+      this.select.open()
+    })
   }
 }
 
