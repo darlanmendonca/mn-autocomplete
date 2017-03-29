@@ -36,8 +36,20 @@ body
   .mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
       form.mn-layout-column.mn-layout-sm-row
-        mn-autocomplete.flex(placeholder='Houses')
-          menu.mn-card
+        mn-autocomplete.flex(placeholder='Houses' name='houses')
+          option(value='stark') Stark
+          option(value='lannister') Lannister
+          option(value='bolton') Bolton
+          option(value='targaryen') Targaryen
+          option(value='snow') Snow
+          option(value='greyjoy') Greyjoy
+          option(value='tully') Tully
+          option(value='frey') Frey
+          option(value='arryn') Arryn
+          option(value='martell') Martell
+          option(value='tyrrel') Tyrel
+          
+          //- menu.mn-card
             .mn-option(value='stark') Stark
             .mn-option(value='lannister') Lannister
             .mn-option(value='bolton') Bolton
@@ -67,5 +79,5 @@ body
     script(src='dist/mn-autocomplete.js')
 
   script.
-    var autocomplete = document.querySelector('mn-autocomplete')
+    var houses = document.querySelector('mn-autocomplete')
 

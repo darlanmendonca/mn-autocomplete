@@ -5,7 +5,6 @@ class MnAutocomplete extends window.MnChips {
     this.input = this.querySelector('input')
     this.menu = this.querySelector('menu')
 
-    this.setFilter()
     this.setMenu()
     this.setOnFocus()
 
@@ -13,52 +12,19 @@ class MnAutocomplete extends window.MnChips {
   }
 
   setMenu() {
-    document.addEventListener('mousedown', event => {
-      const isOption = event.target.classList.contains('mn-option')
-        && event.target.closest('mn-autocomplete')
+    const values = this.querySelector('.values')
+    let options = this
+      .querySelector('.values')
+      .cloneNode(true)
+      .querySelectorAll('mn-option')
+    options = Array
+      .from(options)
+      .map(option => `<option value="${option.getAttribute('value')}">${option.getAttribute('placeholder')}</option>`)
 
-      if (isOption) {
-        addChip(event.target)
-      }
-    })
+    values.innerHTML = ''
 
-    const element = this
-
-    function addChip() {
-      event.target.hasAttribute('value')
-        ? element.addChip(event.target.getAttribute('value'), event.target.textContent)
-        : element.addChip(event.target.textContent)
-    }
-  }
-
-  setFilter() {
-    this.input.addEventListener('keyup', () => {
-      const value = this.input.value
-      const options = Array.from(this.menu.querySelectorAll('.mn-option'))
-      if (value) {
-        options.forEach(option => {
-          const matchOption = testRegex(value, option.textContent)
-          matchOption
-            ? option.classList.remove('hidden')
-            : option.classList.add('hidden')
-        })
-      } else {
-        this.menu.querySelectorAll('.mn-option.hidden').forEach(option => option.classList.remove('hidden'))
-      }
-    })
-
-    this.input.addEventListener('blur', () => {
-      this.menu
-        .querySelectorAll('.mn-option.hidden')
-        .forEach(option => option.classList.remove('hidden'))
-
-      this.menu.scrollTop = 0
-    })
-
-    function testRegex(search, value) {
-      const reg = new RegExp(search.split('').join('.*'), 'i')
-      return reg.test(value)
-    }
+    const select = `<mn-select placeholder="test">${options.join('')}</mn-select>`
+    this.insertAdjacentHTML('beforeend', select)
   }
 
   setOnFocus() {
