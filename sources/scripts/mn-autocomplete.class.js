@@ -29,6 +29,8 @@ class MnAutocomplete extends window.MnChips {
     this.insertAdjacentHTML('beforeend', select)
 
     this.select = this.querySelector('mn-select')
+    this.select.container = 'mn-autocomplete'
+    console.log(this.select.container)
   }
 
   setOnFocus() {
@@ -43,10 +45,6 @@ class MnAutocomplete extends window.MnChips {
         window.scrollTo(0, offsetTop)
         document.body.scrollTop = offsetTop
       }
-      this.select.open()
-    })
-
-    this.input.addEventListener('mouseup', () => {
       this.select.open()
     })
   }
