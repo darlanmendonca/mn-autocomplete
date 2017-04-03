@@ -5,8 +5,9 @@
 mn-autocomplete mn-select {
   width: 100%;
   position: absolute !important;
-  bottom: 0;
+  top: 2.3em;
   left: 0;
+  margin: 0 !important;
 
   &:before,
   &:after,
