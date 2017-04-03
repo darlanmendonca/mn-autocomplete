@@ -7,9 +7,22 @@ class MnAutocomplete extends window.MnChips {
     this.menu = this.querySelector('menu')
 
     this.setMenu()
+    this.setFilter()
     this.setOnFocus()
 
     return self
+  }
+
+  setFilter() {
+    this.input.addEventListener('keyup', (event) => {
+      if (event.key === 'Escape') {
+        this.input.value = ''
+      }
+
+      if (this.input.value && this.select.filter !== this.input.value) {
+        this.select.filter = this.input.value
+      }
+    })
   }
 
   setMenu() {
@@ -30,7 +43,6 @@ class MnAutocomplete extends window.MnChips {
 
     this.select = this.querySelector('mn-select')
     this.select.container = 'mn-autocomplete'
-    console.log(this.select.container)
   }
 
   setOnFocus() {
