@@ -1,8 +1,12 @@
+[![npm version](https://badge.fury.io/js/mn-autocomplete.svg)](https://badge.fury.io/js/mn-autocomplete)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-autocomplete.svg)](https://gemnasium.com/github.com/minimalist-components/mn-autocomplete)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 # mn-autocomplete
 
 Minimalist input component with autocomplete
 
-<!-- See the [demo](https://minimalist-components.github.io/mn-autocomplete/) -->
+See the [demo](https://minimalist-components.github.io/mn-autocomplete/)
 
 <!-- [![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-autocomplete/master/sources/example/mn-autocomplete.gif)](https://minimalist-components.github.io/mn-autocomplete/)  -->
 
