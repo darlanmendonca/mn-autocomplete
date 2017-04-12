@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+mn-autocomplete option {display: none}
+
 mn-autocomplete mn-select {
   width: 100%;
   position: absolute !important;
