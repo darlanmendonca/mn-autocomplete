@@ -26,6 +26,8 @@ mn-autocomplete menu {
   }
 }
 
+mn-autocomplete.mn-select .mn-select-option[selected] {background: none}
+
 // mn-autocomplete.focused menu {
 //   opacity: 1;
 //   visibility: visible;

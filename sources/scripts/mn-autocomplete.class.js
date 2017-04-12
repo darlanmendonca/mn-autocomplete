@@ -5,12 +5,38 @@ class MnAutocomplete extends window.MnChips {
     this.input = this.querySelector('input')
     this.select = undefined
     this.menu = this.querySelector('menu')
+    this.validateChip = this.hasValidOption
 
     this.setMenu()
     this.setFilter()
     this.setOnFocus()
 
     return self
+  }
+
+  transformValue(value) {
+    if (this.select) {
+      const option = this.select.querySelector('.mn-select-option.focus:not(.hidden)')
+      value = option
+        ? option.getAttribute('value')
+        : value
+    }
+    return value
+  }
+
+  transformPlaceholder(placeholder) {
+    if (this.select) {
+      const option = this.select.querySelector('.mn-select-option.focus:not(.hidden)')
+      placeholder = option
+        ? option.textContent
+        : placeholder
+    }
+    return placeholder
+  }
+
+  hasValidOption() {
+    const optionFocused = this.select.querySelector('.mn-select-option.focus:not(.hidden)')
+    return Boolean(optionFocused)
   }
 
   setFilter() {
@@ -58,6 +84,12 @@ class MnAutocomplete extends window.MnChips {
         document.body.scrollTop = offsetTop
       }
       this.select.open()
+    })
+
+    this.input.addEventListener('keydown', () => {
+      !this.select.classList.contains('visible')
+        ? this.select.open()
+        : null
     })
   }
 }
